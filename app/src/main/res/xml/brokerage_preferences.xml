@@ -11,7 +11,7 @@
         android:key="@string/prefs.brokerage.intraday_key"/>
 
     <Preference android:title="Futures"
-        android:key="@string/prefs.brokerage.futures_key"/>
+        android:key="@string/prefs.brokerage.futures_key" />
 
     <Preference android:title="Options"
         android:key="@string/prefs.brokerage.options_key">
@@ -22,5 +22,7 @@
 
     <Preference android:title="@string/prefs.brokerage.commodities_title"
         android:key="@string/prefs.brokerage.commodities_key"/>
+
+    <Preference android:defaultValue=""/>
 
 </PreferenceScreen>

@@ -1,5 +1,6 @@
 package com.wordpress.techanand.stockcalculator.fragments;
 
+import android.content.SharedPreferences;
 import android.preference.Preference;
 
 /**
@@ -9,8 +10,11 @@ import android.preference.Preference;
 import android.preference.Preference;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.widget.Toast;
 
+import com.wordpress.techanand.stockcalculator.App;
+import com.wordpress.techanand.stockcalculator.CustomPreferences;
 import com.wordpress.techanand.stockcalculator.R;
 
 import java.util.Map;
@@ -41,6 +45,80 @@ public class BrokeragePrefs extends PreferenceFragment implements Preference.OnP
         currency.setOnPreferenceClickListener(this);
         commodities = (Preference) findPreference(getResources().getString(R.string.prefs_brokerage_commodities_key));
         commodities.setOnPreferenceClickListener(this);
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String summary = "";
+        double charges;
+        //Delivery
+        if(App.getBoolPref(getActivity(), R.string.prefs_brokerage_delivery_use_flat_charges_key, R.bool.prefs_brokerage_delivery_use_flat_charges_default)){
+            charges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_delivery_flat_charges_key, R.string.prefs_brokerage_delivery_flat_charges_default);
+            if(charges > 0){
+                summary = String.format(getResources().getString(R.string.app_stocks_using_flat_brokerage, Math.round(charges)));
+            }else{
+                summary = String.format(getResources().getString(R.string.app_stocks_no_brokerage_charges));
+            }
+        }else{
+            charges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_delivery_percent_key, R.string.prefs_brokerage_delivery_percent_default);
+            summary = String.format(getResources().getString(R.string.app_stocks_delivery_using_percent_brokerage, Double.toString(charges)));
+        }
+        delivery.setSummary(summary);
+        //Intraday
+        double maxCharges;
+        if(App.getBoolPref(getActivity(), R.string.prefs_brokerage_intraday_use_flat_charges_key, R.bool.prefs_brokerage_intraday_use_flat_charges_default)){
+            charges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_intraday_flat_charges_key, R.string.prefs_brokerage_intraday_flat_charges_default);
+            if(charges > 0){
+                summary = String.format(getResources().getString(R.string.app_stocks_using_flat_brokerage, Math.round(charges)));
+            }else{
+                summary = String.format(getResources().getString(R.string.app_stocks_no_brokerage_charges));
+            }
+        }else{
+            charges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_intraday_percent_key, R.string.prefs_brokerage_intraday_percent_default);
+            maxCharges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_intraday_maximum_key, R.string.prefs_brokerage_intraday_maximum_default);
+            summary = String.format(getResources().getString(R.string.app_stocks_using_percent_brokerage, Double.toString(charges), Double.toString(maxCharges)));
+        }
+        intraday.setSummary(summary);
+        //Futures
+        if(App.getBoolPref(getActivity(), R.string.prefs_brokerage_futures_use_flat_charges_key, R.bool.prefs_brokerage_futures_use_flat_charges_default)){
+            charges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_futures_flat_charges_key, R.string.prefs_brokerage_futures_flat_charges_default);
+            if(charges > 0){
+                summary = String.format(getResources().getString(R.string.app_stocks_using_flat_brokerage, Math.round(charges)));
+            }else{
+                summary = String.format(getResources().getString(R.string.app_stocks_no_brokerage_charges));
+            }
+        }else{
+            charges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_futures_percent_key, R.string.prefs_brokerage_futures_percent_default);
+            maxCharges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_futures_maximum_key, R.string.prefs_brokerage_futures_maximum_default);
+            summary = String.format(getResources().getString(R.string.app_stocks_using_percent_brokerage, Double.toString(charges), Double.toString(maxCharges)));
+        }
+        futures.setSummary(summary);
+        //Options
+        if(App.getBoolPref(getActivity(), R.string.prefs_brokerage_options_use_flat_charges_key, R.bool.prefs_brokerage_options_use_flat_charges_default)){
+            charges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_options_flat_charges_key, R.string.prefs_brokerage_options_flat_charges_default);
+            if(charges > 0){
+                summary = String.format(getResources().getString(R.string.app_stocks_using_flat_brokerage, Math.round(charges)));
+            }else{
+                summary = String.format(getResources().getString(R.string.app_stocks_no_brokerage_charges));
+            }
+        }else{
+            charges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_options_percent_key, R.string.prefs_brokerage_options_percent_default);
+            maxCharges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_options_maximum_key, R.string.prefs_brokerage_options_maximum_default);
+            summary = String.format(getResources().getString(R.string.app_stocks_using_percent_brokerage, Double.toString(charges), Double.toString(maxCharges)));
+        }
+        options.setSummary(summary);
+        //Commodities
+        charges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_commodities_percent_key, R.string.prefs_brokerage_commodities_percent_default);
+        maxCharges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_commodities_maximum_key, R.string.prefs_brokerage_commodities_maximum_default);
+        summary = String.format(getResources().getString(R.string.app_stocks_using_percent_brokerage, Double.toString(charges), Double.toString(maxCharges)));
+        commodities.setSummary(summary);
+        //Currency
+        charges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_currency_futures_percent_key, R.string.prefs_brokerage_currency_futures_percent_default);
+        maxCharges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_currency_futures_maximum_key, R.string.prefs_brokerage_currency_futures_maximum_default);
+        summary = String.format(getResources().getString(R.string.app_stocks_currency_futures_using_percent_brokerage, Double.toString(charges), Double.toString(maxCharges)));
+        summary = summary + "\n\n";
+        charges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_currency_options_percent_key, R.string.prefs_brokerage_currency_options_percent_default);
+        maxCharges = App.getDoublePref(getActivity(), R.string.prefs_brokerage_currency_options_maximum_key, R.string.prefs_brokerage_currency_options_maximum_default);
+        summary = summary + String.format(getResources().getString(R.string.app_stocks_currency_options_using_percent_brokerage, Double.toString(charges), Double.toString(maxCharges)));
+        currency.setSummary(summary);
     }
 
 

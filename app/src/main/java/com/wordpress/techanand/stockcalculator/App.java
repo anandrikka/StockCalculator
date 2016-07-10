@@ -76,27 +76,14 @@ public class App {
      */
     public static boolean getBoolPref(Context context, int keyId, int defaultId){
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPreferences.getBoolean(
-                context.getResources().getString(keyId),
-                context.getResources().getBoolean(defaultId));
+        return sharedPreferences.getBoolean(context.getResources().getString(keyId), context.getResources().getBoolean(defaultId));
     }
 
-    /*public static double getDoublePref(Context context, int keyId, int defaultId){
+    public static double getDoublePref(Context context, int keyId, int defaultId){
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         return Double.parseDouble(sharedPreferences.getString(
                 context.getResources().getString(keyId),
                 context.getResources().getString(defaultId)));
-    }*/
-
-    public static double getDoublePrefFromString(Context context, int keyId, int defaultId){
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        String prefVal = sharedPreferences.getString(
-                context.getResources().getString(keyId),
-                context.getResources().getString(defaultId));
-        if(prefVal.equals("")){
-            return -1;
-        }
-        return Double.parseDouble(prefVal);
     }
 
     /**

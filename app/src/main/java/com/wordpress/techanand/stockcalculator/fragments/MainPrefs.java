@@ -8,12 +8,21 @@ import android.preference.PreferenceManager;
 
 import com.wordpress.techanand.stockcalculator.R;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by Anand Rikka on 10 Jul 2016.
  */
 public class MainPrefs extends PreferenceFragment{
 
+    public static final DecimalFormat numberFormatter = new DecimalFormat("#,##,###.00");
+
     public MainPrefs() {
+    }
+
+    public static String getFormattedNumber(double number){
+        numberFormatter.setMinimumIntegerDigits(1);
+        return numberFormatter.format(number);
     }
 
     @Override
