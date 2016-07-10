@@ -3,17 +3,21 @@
     <PreferenceCategory android:title="@string/prefs.brokerage.currency.futures_title">
         <EditTextPreference android:title="@string/prefs.brokerage_maximum_title"
             android:defaultValue="@string/prefs.brokerage.currency.futures_maximum_default"
+            android:inputType="numberDecimal"
             android:key="@string/prefs.brokerage.currency.futures_maximum_key"/>
         <EditTextPreference android:title="@string/prefs.brokerage_percent_title"
             android:defaultValue="@string/prefs.brokerage.currency.futures_percent_default"
+            android:inputType="numberDecimal"
             android:key="@string/prefs.brokerage.currency.futures_percent_key"/>
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/prefs.brokerage.currency.futures_title">
         <EditTextPreference android:title="@string/prefs.brokerage_maximum_title"
             android:defaultValue="@string/prefs.brokerage.currency.options_maximum_default"
+            android:inputType="numberDecimal"
             android:key="@string/prefs.brokerage.currency.options_maximum_key"/>
         <EditTextPreference android:title="@string/prefs.brokerage_percent_title"
             android:defaultValue="@string/prefs.brokerage.currency.options_percent_default"
+            android:inputType="numberDecimal"
             android:key="@string/prefs.brokerage.currency.options_percent_key"/>
     </PreferenceCategory>
 </PreferenceScreen>

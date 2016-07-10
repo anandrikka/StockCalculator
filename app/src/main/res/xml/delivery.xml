@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <SwitchPreference android:title="@string/prefs.brokerage_use_flat_charges_title"
-        android:key="@string/prefs.brokerage.delivery_use_flat_charges_key" />
+        android:key="@string/prefs.brokerage.delivery_use_flat_charges_key"
+        android:defaultValue="@bool/prefs.brokerage.delivery_use_flat_charges_default"/>
     <EditTextPreference android:title="@string/prefs.brokerage.flat_charges_title"
         android:key="@string/prefs.brokerage.delivery_flat_charges_key"
         android:inputType="numberDecimal"

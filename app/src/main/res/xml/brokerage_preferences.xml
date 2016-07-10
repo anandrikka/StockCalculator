@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
-    android:fragment="com.wordpress.techanand.financialcalculator.app.fragments.BrokeragePrefs"
+    android:fragment="com.wordpress.techanand.stockcalculator.fragments.BrokeragePrefs"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <Preference android:title="Delivery"
-        android:key="@string/prefs.brokerage.delivery_key"/>
+        android:fragment="com.wordpress.techanand.stockcalculator.fragments.DeliveryPrefs"
+        android:key="@string/prefs.brokerage.delivery_key" />
 
     <Preference android:title="Intraday"
         android:key="@string/prefs.brokerage.intraday_key"/>

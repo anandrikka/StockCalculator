@@ -65,8 +65,10 @@ public class StockCalculatorActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        Intent launchMenu;
         switch(id){
+            case android.R.id.home:
+                super.onBackPressed();
+                break;
             case R.id.action_settings:
                 startActivity(new Intent(this, SettingsActivity.class));
                 break;
@@ -82,9 +84,6 @@ public class StockCalculatorActivity extends AppCompatActivity {
             default:
                 Toast.makeText(this, item.getTitle()+"menu item is not present !", Toast.LENGTH_SHORT).show();
                 return true;
-        }
-        if (id == R.id.action_settings) {
-            return true;
         }
         return super.onOptionsItemSelected(item);
     }
