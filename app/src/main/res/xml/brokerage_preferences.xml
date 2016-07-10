@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    android:fragment="com.wordpress.techanand.financialcalculator.app.fragments.BrokeragePrefs"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference android:title="Delivery"
+        android:key="@string/prefs.brokerage.delivery_key"/>
+
+    <Preference android:title="Intraday"
+        android:key="@string/prefs.brokerage.intraday_key"/>
+
+    <Preference android:title="Futures"
+        android:key="@string/prefs.brokerage.futures_key"/>
+
+    <Preference android:title="Options"
+        android:key="@string/prefs.brokerage.options_key">
+    </Preference>
+
+    <Preference android:title="@string/prefs.brokerage.currency_title"
+        android:key="@string/prefs.brokerage.currency_key"/>
+
+    <Preference android:title="@string/prefs.brokerage.commodities_title"
+        android:key="@string/prefs.brokerage.commodities_key"/>
+
+</PreferenceScreen>
