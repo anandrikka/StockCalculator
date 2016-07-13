@@ -81,9 +81,13 @@ public class App {
 
     public static double getDoublePref(Context context, int keyId, int defaultId){
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return Double.parseDouble(sharedPreferences.getString(
+        String pref = sharedPreferences.getString(
                 context.getResources().getString(keyId),
-                context.getResources().getString(defaultId)));
+                context.getResources().getString(defaultId));
+        if(pref !=null && !pref.equals("")){
+            return Double.parseDouble(pref);
+        }
+        return -1;
     }
 
     /**

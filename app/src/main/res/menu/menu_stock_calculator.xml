@@ -2,6 +2,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.wordpress.techanand.stockcalculator.StockCalculatorActivity">
+
+    <item
+        android:id="@+id/action_transaction"
+        android:title="transaction"
+        android:icon="@drawable/account_balance"
+        android:visible="true"
+        app:showAsAction="always"/>
+
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

@@ -55,6 +55,12 @@ public class StocksBySharePrice extends Fragment {
     private String[] categories;
     private boolean isCalcClicked;
 
+    private ShareDataListener shareDetails;
+
+    public interface ShareDataListener {
+        public StockObject shareData(StockObject stockObject);
+    }
+
     public StocksBySharePrice() {}
 
     @Override
@@ -121,13 +127,14 @@ public class StocksBySharePrice extends Fragment {
             @Override
             public void onClick(View v) {
                 selectCategory.setSelection(0);
-                selectExchange.check(R.id.bseExchange);
+                selectExchange.check(R.id.nseExchange);
                 buyInput.setText("");
                 sellInput.setText("");
                 quantityInput.setText("");
                 //stockListener.reset();
                 isCalcClicked = false;
                 resultsTable.setVisibility(View.GONE);
+                getActivity().findViewById(R.id.fab).setVisibility(View.GONE);
             }
         });
 
@@ -159,11 +166,11 @@ public class StocksBySharePrice extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        /*try{
-            //stockListener = (StockListener)context;
+        try{
+            shareDetails = (ShareDataListener)context;
         }catch (Exception e){
-            throw new ClassCastException(getActivity().toString() + " must implement CalculateStockListener");
-        }*/
+            throw new ClassCastException(getActivity().toString() + " must implement ShareDataListener");
+        }
     }
 
     private void calculateAmount(boolean isFromInitialLoad, boolean isCalcClicked){
@@ -280,6 +287,8 @@ public class StocksBySharePrice extends Fragment {
         stockObjectData.setProfitOrLoss(profitOrLoss);
         /*getSupportFragmentManager()
                 .beginTransaction().setCustomAnimations(R.anim.slide_left, R.anim.slide_right).commit();*/
+        shareDetails.shareData(stockObjectData);
+        getActivity().findViewById(R.id.fab).setVisibility(View.VISIBLE);
         if((stockObjectData.getSellPrice()>0 || stockObjectData.getBuyPrice()>0) && stockObjectData.getQuantity()>0){
             displayResult(stockObjectData, stockPreferencesObject);
             resultsTable.setVisibility(View.VISIBLE);
@@ -427,12 +436,12 @@ public class StocksBySharePrice extends Fragment {
     }
 
     public double getDoublePref(int keyId, int defaultId){
-        return Double.parseDouble(sharedPreferences.getString(
+        String pref = sharedPreferences.getString(
                 getResources().getString(keyId),
-                getResources().getString(defaultId)));
+                getResources().getString(defaultId));
+        if(pref != null && !pref.equals("")){
+            return Double.parseDouble(pref);
+        }
+        return -1;
     }
-
-    /*public double getStringPref(int keyId, int defaultId){
-        return sharedPreferences.getString(getResources().getString(keyId), getResources().getString(defaultId));
-    }*/
 }
