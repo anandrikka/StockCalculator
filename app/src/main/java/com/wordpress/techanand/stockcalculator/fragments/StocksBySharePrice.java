@@ -101,9 +101,9 @@ public class StocksBySharePrice extends Fragment {
         int id = selectCategory.getSelectedItemPosition();
         if(id == 4 || id == 5 || id == 6){
             infoTextView.setVisibility(View.VISIBLE);
-            quantityTextView.setText("Lots");
+            quantityTextView.setText(getResources().getString(R.string.app_stocksbyprice_lots_label));
         }else{
-            quantityTextView.setText("Quantity");
+            quantityTextView.setText(getResources().getString(R.string.app_stocksbyshareprice_quantity_label));
         }
 
         selectExchange = (RadioGroup) view.findViewById(R.id.stock_exchange_choose);
@@ -131,10 +131,10 @@ public class StocksBySharePrice extends Fragment {
                 calcPreferences();
                 if(position == 4 || position == 5 || position == 6){
                     infoTextView.setVisibility(View.VISIBLE);
-                    quantityTextView.setText("Lots");
+                    quantityTextView.setText(getResources().getString(R.string.app_stocksbyprice_lots_label));
                 }else{
                     infoTextView.setVisibility(View.GONE);
-                    quantityTextView.setText("Quantity");
+                    quantityTextView.setText(getResources().getString(R.string.app_stocksbyshareprice_quantity_label));
                 }
             }
             @Override

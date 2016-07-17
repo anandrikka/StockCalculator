@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".SettingsActivity"
-            android:label="Settings"
+            android:label="@string/app.settings_label"
             android:parentActivityName=".StockCalculatorActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -32,14 +32,14 @@
         </activity>
         <activity
             android:name=".AboutActivity"
-            android:label="About"
+            android:label="@string/app.about_label"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".StockCalculatorActivity" />
         </activity>
         <activity android:name=".TransactionActivity"
-            android:label="Transactions"
+            android:label="@string/app.transactions_label"
             android:parentActivityName=".StockCalculatorActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

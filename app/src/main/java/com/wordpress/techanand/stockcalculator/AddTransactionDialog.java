@@ -51,7 +51,7 @@ public class AddTransactionDialog extends Dialog implements View.OnClickListener
     }
 
     public void closeTransactionDialog(){
-        Toast.makeText(parentActivity, "Dialog closed on yes !", Toast.LENGTH_SHORT).show();
+        Toast.makeText(parentActivity, R.string.app_addtransactiondialog_toast_message, Toast.LENGTH_SHORT).show();
         //finish();
     }
 }

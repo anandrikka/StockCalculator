@@ -31,7 +31,7 @@ public class BrokeragePrefs extends PreferenceFragment implements Preference.OnP
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.brokerage_preferences);
-        getActivity().setTitle("Brokerage Settings");
+        getActivity().setTitle(getResources().getString(R.string.app_brokerage_title));
         delivery = (Preference) findPreference(getResources().getString(R.string.prefs_brokerage_delivery_key));
         delivery.setOnPreferenceClickListener(this);
 
@@ -125,7 +125,7 @@ public class BrokeragePrefs extends PreferenceFragment implements Preference.OnP
     @Override
     public void onResume() {
         super.onResume();
-        getActivity().setTitle("Brokerage Settings");
+        getActivity().setTitle(getResources().getString(R.string.app_brokerage_title));
     }
 
     @Override
@@ -168,7 +168,7 @@ public class BrokeragePrefs extends PreferenceFragment implements Preference.OnP
                     //.addToBackStack(CommoditiesPrefs.class.getName())
                     .commit();
         }else {
-            Toast.makeText(getActivity(), preference.getKey()+" Preference doesn't exist !", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), preference.getKey()+getResources().getString(R.string.app_brokerage_preference_not_exist), Toast.LENGTH_SHORT).show();
         }
         return true;
     }

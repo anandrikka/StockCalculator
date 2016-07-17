@@ -20,7 +20,7 @@ public class ExchangePrefs extends PreferenceFragment implements Preference.OnPr
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActivity().setTitle("Exchange Settings");
+        getActivity().setTitle(getResources().getString(R.string.app_exchagesettings_title));
         addPreferencesFromResource(R.xml.exchange_preferences);
         setRetainInstance(true);
         findPreference("stampduty_screen").setOnPreferenceClickListener(this);
@@ -60,7 +60,7 @@ public class ExchangePrefs extends PreferenceFragment implements Preference.OnPr
     @Override
     public void onResume() {
         super.onResume();
-        getActivity().setTitle("Exchange Settings");
+        getActivity().setTitle(getResources().getString(R.string.app_exchagesettings_title));
     }
 
     @Override

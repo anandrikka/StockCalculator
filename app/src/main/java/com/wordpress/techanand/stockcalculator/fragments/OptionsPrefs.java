@@ -37,7 +37,7 @@ public class OptionsPrefs extends PreferenceFragment implements Preference.OnPre
     @Override
     public void onResume() {
         super.onResume();
-        getActivity().setTitle("Options Preferences");
+        getActivity().setTitle(getResources().getString(R.string.app_optionspreference_title));
     }
 
     @Override

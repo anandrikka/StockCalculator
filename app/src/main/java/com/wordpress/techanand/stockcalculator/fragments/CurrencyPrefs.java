@@ -47,7 +47,7 @@ public class CurrencyPrefs extends PreferenceFragment implements Preference.OnPr
     @Override
     public void onResume() {
         super.onResume();
-        getActivity().setTitle("Currency Charges");
+        getActivity().setTitle(getResources().getString(R.string.app_currency_title));
     }
 
     @Override

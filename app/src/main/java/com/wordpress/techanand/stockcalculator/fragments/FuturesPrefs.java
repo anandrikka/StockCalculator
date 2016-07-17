@@ -40,7 +40,7 @@ public class FuturesPrefs extends PreferenceFragment implements Preference.OnPre
     @Override
     public void onResume() {
         super.onResume();
-        getActivity().setTitle("Futures Charges");
+        getActivity().setTitle(getResources().getString(R.string.app_futures_title));
     }
 
     @Override

@@ -23,7 +23,7 @@ public class StampDutyPrefs extends PreferenceFragment implements Preference.OnP
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.stampduty_preferences);
-        getActivity().setTitle("Stampduty charges");
+        getActivity().setTitle(getResources().getString(R.string.app_stampdutycharges_title));
 
         //Delivery
         Preference preference = findPreference(App.getResource(getActivity(), R.string.prefs_exchange_stampduty_delivery_min_key));

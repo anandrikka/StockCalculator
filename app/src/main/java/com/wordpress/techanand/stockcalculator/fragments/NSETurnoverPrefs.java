@@ -24,7 +24,7 @@ public class NSETurnoverPrefs extends PreferenceFragment implements Preference.O
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.nse_turnover_preferences);
-        getActivity().setTitle("NSE Turnover charges");
+        getActivity().setTitle(getResources().getString(R.string.app_nseturnover_title));
 
         Preference preference = findPreference(App.getResource(getActivity(), R.string.prefs_exchange_nsecharges_delivery_key));
         CustomPreferences.setSummary(getActivity(), preference , R.string.prefs_exchange_nsecharges_delivery_default);

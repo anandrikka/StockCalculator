@@ -36,7 +36,7 @@ public class IntradayPrefs extends PreferenceFragment implements Preference.OnPr
     @Override
     public void onResume() {
         super.onResume();
-        getActivity().setTitle("Intraday Charges");
+        getActivity().setTitle(getResources().getString(R.string.app_intraday_title));
     }
 
     @Override

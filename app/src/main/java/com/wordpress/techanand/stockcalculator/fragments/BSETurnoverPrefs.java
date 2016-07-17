@@ -24,7 +24,7 @@ public class BSETurnoverPrefs extends PreferenceFragment implements Preference.O
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.bse_turnover_preferences);
-        getActivity().setTitle("BSE Turnover charges");
+        getActivity().setTitle(getResources().getString(R.string.app_bseturnover_title));
 
         Preference preference = findPreference(App.getResource(getActivity(), R.string.prefs_exchange_bsecharges_delivery_key));
         CustomPreferences.setSummary(getActivity(), preference , R.string.prefs_exchange_bsecharges_delivery_default);

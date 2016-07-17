@@ -265,5 +265,26 @@
     <string name="app.stocks.using_percent_brokerage">%1$s percent or Maximum %2$s/- per trade</string>
     <string name="app.stocks.currency_futures_using_percent_brokerage"><b>Currency Futures:</b> %1$s percent or Maximum %2$s/- per trade</string>
     <string name="app.stocks.currency_options_using_percent_brokerage"><b>Currency Options:</b> %1$s percent or Maximum %2$s/- per trade</string>
+    <!-- ...................... StockObject Calculator : End .................................-->
+
+    <string name="app.addtransactiondialog.toast_message">Dialog closed on yes !</string>
+    <string name="app.settings_label">Settings</string>
+    <string name="app.about_label">About</string>
+    <string name="app.transactions_label">Transactions</string>
+    <string name="app.brokerage.title">Brokerage Settings</string>
+    <string name="app.brokerage.preference_not_exist">" Preference doesn't exist !"</string>
+    <string name="app.bseturnover.title">BSE Turnover charges</string>
+    <string name="app.commodities.title">Commodities Charges</string>
+    <string name="app.currency.title">Currency Charges</string>
+    <string name="app.delivery.title">Delivery Charges</string>
+    <string name="app.exchagesettings.title">Exchange Settings</string>
+    <string name="app.futures.title">Futures Charges</string>
+    <string name="app.intraday.title">Intraday Charges</string>
+    <string name="app.nseturnover.title">NSE Turnover charges</string>
+    <string name="app.optionspreference.title">Options Preferences</string>
+    <string name="app.stampdutycharges.title">Stampduty charges</string>
+    <string name="app.stocksbyprice.lots_label">Lots</string>
+    <string name="app.stocksbyshareprice.quantity_label">Quantity</string>
+
 
 </resources>

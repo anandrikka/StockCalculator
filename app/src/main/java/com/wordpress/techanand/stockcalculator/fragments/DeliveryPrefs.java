@@ -36,7 +36,7 @@ public class DeliveryPrefs extends PreferenceFragment implements Preference.OnPr
     @Override
     public void onResume() {
         super.onResume();
-        getActivity().setTitle("Delivery Charges");
+        getActivity().setTitle(getResources().getString(R.string.app_delivery_title));
     }
 
     @Override

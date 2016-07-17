@@ -33,7 +33,7 @@ public class CommoditiesPrefs extends PreferenceFragment implements Preference.O
     @Override
     public void onResume() {
         super.onResume();
-        getActivity().setTitle("Commodities Charges");
+        getActivity().setTitle(getResources().getString(R.string.app_commodities_title));
     }
 
     @Override
