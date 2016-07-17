@@ -14,8 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/stock_exchange_choose"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
         android:layout_below="@+id/stock_category_list"
         android:orientation="horizontal"
         android:paddingTop="16dp">
@@ -63,10 +61,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/app.stocks.quantity_label"
-                android:gravity="center_horizontal" />
+                android:gravity="center_horizontal"
+                android:id="@+id/quantity_label"/>
         </TableRow>
         <TableRow
-            android:padding="10dp">
+            android:paddingTop="10dp">
             <EditText
                 android:id="@+id/stock_price_buy"
                 android:layout_width="0dp"
@@ -89,22 +88,31 @@
                 android:layout_weight="1"
                 android:inputType="numberDecimal"/>
         </TableRow>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:paddingBottom="8dp"
+            android:text="* 1 Lot = 1000 Units"
+            android:textStyle="bold"
+            android:id="@+id/info" />
         <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp">
             <Space android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="2"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:text="@string/app.stocks_reset_label"
                 android:id="@+id/reset"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="2"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:text="@string/app.stocks.calculate"
                 android:id="@+id/calculate"/>
             <Space android:layout_weight="1"
@@ -113,15 +121,185 @@
         </TableRow>
     </TableLayout>
 
-    <TableLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/table"
+        android:id="@+id/resultsTable">
+
+        <TextView
+            android:id="@+id/txt_dia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Transaction Details"
+            android:textColor="@android:color/black"
+            android:textSize="16dp"
+            android:gravity="center"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Total Turnover"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="123"
+                android:id="@+id/totalTurnOver"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Brokerage"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="123"
+                android:id="@+id/brokerage"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Exchange charges &amp; Taxes"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="123"
+                android:id="@+id/otherCharges"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Break Even Points"
+                android:id="@+id/break_even_label"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="123"
+                android:id="@+id/breakEvenPrice"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:id="@+id/net_profit_loss">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Taxes + Brokerage"
+                android:id="@+id/prfit_loss_label"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="123"
+                android:id="@+id/profitOrLoss"/>
+
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:id="@+id/total_amount_row">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Total Amount"
+                android:id="@+id/total_amount_label"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="123"
+                android:id="@+id/total_amount"/>
+
+        </LinearLayout>-->
+
+    </LinearLayout>
+
+    <!--<TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="10dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:paddingBottom="16dp"
-        android:layout_below="@+id/table"
-        android:id="@+id/resultsTable">
+        android:layout_below="@+id/resultsTables"
+        android:id="@+id/resultsTable1">
         <TableRow android:paddingBottom="16dp">
             <TextView
                 android:layout_width="0dp"
@@ -196,6 +374,6 @@
                 android:layout_weight="1"
                 android:id="@+id/profitOrLoss"/>
         </TableRow>
-    </TableLayout>
+    </TableLayout>-->
 
 </RelativeLayout>

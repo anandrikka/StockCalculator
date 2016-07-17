@@ -41,6 +41,18 @@ public class BSETurnoverPrefs extends PreferenceFragment implements Preference.O
         preference = findPreference(App.getResource(getActivity(), R.string.prefs_exchange_bsecharges_options_key));
         CustomPreferences.setSummary(getActivity(), preference , R.string.prefs_exchange_bsecharges_options_default);
         preference.setOnPreferenceChangeListener(this);
+
+        preference = findPreference(App.getResource(getActivity(), R.string.prefs_exchange_bsecharges_currency_futures_key));
+        CustomPreferences.setSummary(getActivity(), preference , R.string.prefs_exchange_bsecharges_currency_futures_default);
+        preference.setOnPreferenceChangeListener(this);
+
+        preference = findPreference(App.getResource(getActivity(), R.string.prefs_exchange_bsecharges_currency_options_key));
+        CustomPreferences.setSummary(getActivity(), preference , R.string.prefs_exchange_bsecharges_currency_options_default);
+        preference.setOnPreferenceChangeListener(this);
+
+        preference = findPreference(App.getResource(getActivity(), R.string.prefs_exchange_bsecharges_commodities_key));
+        CustomPreferences.setSummary(getActivity(), preference , R.string.prefs_exchange_bsecharges_commodities_default);
+        preference.setOnPreferenceChangeListener(this);
     }
 
     @Override

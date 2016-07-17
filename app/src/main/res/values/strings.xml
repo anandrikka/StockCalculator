@@ -87,20 +87,32 @@
     <string name="prefs.exchange.nsecharges.intraday_key" translatable="false">nse_charges_intraday</string>
     <string name="prefs.exchange.nsecharges.futures_key" translatable="false">nse_charges_futures</string>
     <string name="prefs.exchange.nsecharges.options_key" translatable="false">nse_charges_options</string>
+    <string name="prefs.exchange.nsecharges.currency_futures_key" translatable="false">nse_charges_currency_futures_options</string>
+    <string name="prefs.exchange.nsecharges.currency_options_key" translatable="false">nse_charges_currency_options_options</string>
+    <string name="prefs.exchange.nsecharges.commodities_key" translatable="false">nse_charges_commodities</string>
     <string name="prefs.exchange.nsecharges.delivery_default">0.00325</string>
     <string name="prefs.exchange.nsecharges.intraday_default">0.00325</string>
     <string name="prefs.exchange.nsecharges.futures_default">0.0021</string>
     <string name="prefs.exchange.nsecharges.options_default">0.053</string>
+    <string name="prefs.exchange.nsecharges.currency_futures_default">0.00135</string>
+    <string name="prefs.exchange.nsecharges.currency_options_default">0.044</string>
+    <string name="prefs.exchange.nsecharges.commodities_default">0.0031</string>
 
     <!--BSE Keys and Defaults-->
     <string name="prefs.exchange.bsecharges.delivery_key" translatable="false">bse_charges_delivery</string>
     <string name="prefs.exchange.bsecharges.intraday_key" translatable="false">bse_charges_intraday</string>
     <string name="prefs.exchange.bsecharges.futures_key" translatable="false">bse_charges_futures</string>
     <string name="prefs.exchange.bsecharges.options_key" translatable="false">bse_charges_options</string>
+    <string name="prefs.exchange.bsecharges.currency_futures_key" translatable="false">bse_charges_currency_futures_options</string>
+    <string name="prefs.exchange.bsecharges.currency_options_key" translatable="false">bse_charges_currency_options_options</string>
+    <string name="prefs.exchange.bsecharges.commodities_key" translatable="false">bse_charges_commodities</string>
     <string name="prefs.exchange.bsecharges.delivery_default">0.00275</string>
     <string name="prefs.exchange.bsecharges.intraday_default">0.00275</string>
     <string name="prefs.exchange.bsecharges.futures_default">0.0007</string>
     <string name="prefs.exchange.bsecharges.options_default">0.027</string>
+    <string name="prefs.exchange.bsecharges.currency_futures_default">0</string>
+    <string name="prefs.exchange.bsecharges.currency_options_default">0</string>
+    <string name="prefs.exchange.bsecharges.commodities_default">0.0031</string>
 
     <!--Stampduty Keys and Defaults-->
     <string name="prefs.exchange.stampduty.delivery_min_key" translatable="false">exchange_stamp_duty_delivery_min</string>
@@ -188,7 +200,7 @@
     <!-- ...................... Brokerage Preferences : End .................................-->
 
     <!-- ...................... Exchange Preferences : Start .................................-->
-    <string name="prefs.exchange_service_tax_title">Service Tax % (On Brokerage)</string>
+    <string name="prefs.exchange_service_tax_title">Service Tax % (On Brokerage+Tx Charges)</string>
     <string name="prefs.sebi_charges_title">SEBI charges per Crore</string>
     <string name="prefs.exchange_sst_title">Security Transaction Tax % (On Turnover)</string>
     <string name="prefs.exchange.stt.delivery_title">Delivery</string>
@@ -205,11 +217,19 @@
     <string name="prefs.exchange.nsecharges.intraday_title">Intraday</string>
     <string name="prefs.exchange.nsecharges.futures_title">Futures</string>
     <string name="prefs.exchange.nsecharges.options_title">Options</string>
+    <string name="prefs.exchange.nsecharges.currency_title">Currency</string>
+    <string name="prefs.exchange.nsecharges.currency_futures_title">Futures</string>
+    <string name="prefs.exchange.nsecharges.currency_options_title">Options</string>
+    <string name="prefs.exchange.nsecharges.commodities_title">Commodities</string>
     <string name="prefs.exchange.bsecharges_title">BSE Turnover Charges %(On Turnover)</string>
     <string name="prefs.exchange.bsecharges.delivery_title">Delivery</string>
     <string name="prefs.exchange.bsecharges.intraday_title">Intraday</string>
     <string name="prefs.exchange.bsecharges.futures_title">Futures</string>
     <string name="prefs.exchange.bsecharges.options_title">Options</string>
+    <string name="prefs.exchange.bsecharges.currency_title">Currency</string>
+    <string name="prefs.exchange.bsecharges.currency_futures_title">Futures</string>
+    <string name="prefs.exchange.bsecharges.currency_options_title">Options</string>
+    <string name="prefs.exchange.bsecharges.commodities_title">Commodities</string>
 
     <!-- ...................... Exchange Turnover Preferences : End .................................-->
 
@@ -240,10 +260,10 @@
     <string name="app.stocks.calculate">Calculate</string>
     <string name="app.stocks.amount_invested">Amount Invested</string>
     <string name="app.stocks.no_brokerage_charges">Zero brokerage charges</string>
-    <string name="app.stocks.using_flat_brokerage">Using Flat brokerage of Rs.%1$d on Total turnover</string>
+    <string name="app.stocks.using_flat_brokerage">Using Flat brokerage of Rs.%1$d per trade</string>
     <string name="app.stocks.delivery_using_percent_brokerage">%1$s percent of brokerage on Total turnover</string>
-    <string name="app.stocks.using_percent_brokerage">%1$s percent of Total turnover or Maximum %2$s/-</string>
-    <string name="app.stocks.currency_futures_using_percent_brokerage"><b>Currency Futures:</b> %1$s percent of Total turnover or Maximum %2$s/-</string>
-    <string name="app.stocks.currency_options_using_percent_brokerage"><b>Currency Options:</b> %1$s percent of Total turnover or Maximum %2$s/-</string>
+    <string name="app.stocks.using_percent_brokerage">%1$s percent or Maximum %2$s/- per trade</string>
+    <string name="app.stocks.currency_futures_using_percent_brokerage"><b>Currency Futures:</b> %1$s percent or Maximum %2$s/- per trade</string>
+    <string name="app.stocks.currency_options_using_percent_brokerage"><b>Currency Options:</b> %1$s percent or Maximum %2$s/- per trade</string>
 
 </resources>

@@ -10,7 +10,7 @@
             android:inputType="numberDecimal"
             android:key="@string/prefs.brokerage.currency.futures_percent_key"/>
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/prefs.brokerage.currency.futures_title">
+    <PreferenceCategory android:title="@string/prefs.brokerage.currency.options_title">
         <EditTextPreference android:title="@string/prefs.brokerage_maximum_title"
             android:defaultValue="@string/prefs.brokerage.currency.options_maximum_default"
             android:inputType="numberDecimal"

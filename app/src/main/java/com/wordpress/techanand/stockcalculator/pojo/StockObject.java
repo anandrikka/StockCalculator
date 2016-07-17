@@ -5,9 +5,26 @@ package com.wordpress.techanand.stockcalculator.pojo;
  */
 public class StockObject {
     private double buyPrice, sellPrice, quantity;
+
     String category, exchange;
 
-    private double brokerage, sttCharges, exchangeTxCharges, serviceCharges, sebiCharges, stampDutyCharges, breakEven, profitOrLoss;
+    private double brokerage, sttCharges, exchangeTxCharges, serviceCharges, sebiCharges, stampDutyCharges, breakEven, profitOrLoss, totalCharges, turnOver, totalBuyValue, totalSellValue;
+
+    public double getTotalBuyValue() {
+        return totalBuyValue;
+    }
+
+    public void setTotalBuyValue(double totalBuyValue) {
+        this.totalBuyValue = totalBuyValue;
+    }
+
+    public double getTotalSellValue() {
+        return totalSellValue;
+    }
+
+    public void setTotalSellValue(double totalSellValue) {
+        this.totalSellValue = totalSellValue;
+    }
 
     public String getCategory() {
         return category;
@@ -17,12 +34,28 @@ public class StockObject {
         this.category = category;
     }
 
+    public double getTurnOver() {
+        return turnOver;
+    }
+
+    public void setTurnOver(double turnOver) {
+        this.turnOver = turnOver;
+    }
+
     public String getExchange() {
         return exchange;
     }
 
     public void setExchange(String exchange) {
         this.exchange = exchange;
+    }
+
+    public double getTotalCharges() {
+        return totalCharges;
+    }
+
+    public void setTotalCharges(double totalCharges) {
+        this.totalCharges = totalCharges;
     }
 
     public StockObject() {

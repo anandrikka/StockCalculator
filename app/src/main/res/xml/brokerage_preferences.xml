@@ -23,6 +23,4 @@
     <Preference android:title="@string/prefs.brokerage.commodities_title"
         android:key="@string/prefs.brokerage.commodities_key"/>
 
-    <Preference android:defaultValue=""/>
-
 </PreferenceScreen>

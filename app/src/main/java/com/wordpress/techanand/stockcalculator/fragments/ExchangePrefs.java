@@ -89,6 +89,7 @@ public class ExchangePrefs extends PreferenceFragment implements Preference.OnPr
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object o) {
-        return false;
+        preference.setSummary((String)o);
+        return true;
     }
 }

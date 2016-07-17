@@ -16,4 +16,18 @@
         android:key="@string/prefs.exchange.nsecharges.options_key"
         android:defaultValue="@string/prefs.exchange.nsecharges.options_default"
         android:inputType="numberDecimal"/>
+    <PreferenceCategory android:title="@string/prefs.exchange.nsecharges.currency_title">
+        <EditTextPreference android:title="@string/prefs.exchange.nsecharges.currency_futures_title"
+            android:key="@string/prefs.exchange.nsecharges.currency_futures_key"
+            android:defaultValue="@string/prefs.exchange.nsecharges.currency_futures_default"
+            android:inputType="numberDecimal"/>
+        <EditTextPreference android:title="@string/prefs.exchange.nsecharges.currency_options_title"
+            android:key="@string/prefs.exchange.nsecharges.currency_options_key"
+            android:defaultValue="@string/prefs.exchange.nsecharges.currency_options_default"
+            android:inputType="numberDecimal"/>
+    </PreferenceCategory>
+    <EditTextPreference android:title="@string/prefs.exchange.nsecharges.commodities_title"
+        android:key="@string/prefs.exchange.nsecharges.commodities_key"
+        android:defaultValue="@string/prefs.exchange.nsecharges.commodities_default"
+        android:inputType="numberDecimal"/>
 </PreferenceScreen>

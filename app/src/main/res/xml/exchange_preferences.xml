@@ -11,9 +11,6 @@
         android:defaultValue="@string/prefs.sebi_charges_default"
         android:inputType="numberDecimal"/>
 
-    <Preference android:title="@string/prefs.exchange.stampduty_title"
-        android:key="@string/prefs.exchange.stampduty_screen" />
-
     <PreferenceCategory android:title="@string/prefs.exchange_sst_title">
         <EditTextPreference android:title="@string/prefs.exchange.stt.delivery_title"
             android:key="@string/prefs.exchange.stt.delivery_key"
@@ -37,7 +34,12 @@
             android:inputType="numberDecimal"/>
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/prefs.exchange.turnover_charges_title">
+    <Preference android:title="@string/prefs.exchange.stampduty_title"
+        android:key="@string/prefs.exchange.stampduty_screen"
+        android:summary="Stampduty charges differ from state to state. Contact your broker for more information."/>
+
+    <PreferenceCategory android:title="@string/prefs.exchange.turnover_charges_title"
+        android:summary="Charges by Exchange for doing trading">
         <Preference android:title="NSE Charges"
             android:key="@string/prefs.exchange.turnover_nse_screen"/>
         <Preference android:title="BSE Charges"

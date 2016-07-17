@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -30,6 +31,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.wordpress.techanand.stockcalculator.fragments.MainPrefs;
 import com.wordpress.techanand.stockcalculator.fragments.ProfitOrLoss;
 import com.wordpress.techanand.stockcalculator.fragments.StocksBySharePrice;
 import com.wordpress.techanand.stockcalculator.pojo.StockObject;
@@ -58,13 +60,15 @@ public class StockCalculatorActivity extends AppCompatActivity implements Stocks
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        loadDefaultSettings();
+
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setVisibility(View.GONE);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*AddTransactionDialog dialog = new AddTransactionDialog(StockCalculatorActivity.this);
-                dialog.show();*/
+                *//*AddTransactionDialog dialog = new AddTransactionDialog(StockCalculatorActivity.this);
+                dialog.show();*//*
                 final Dialog dialog = new Dialog(StockCalculatorActivity.this);
                 dialog.setContentView(R.layout.add_transaction_dialog);
                 int width = (int)(getResources().getDisplayMetrics().widthPixels*0.95);
@@ -86,11 +90,21 @@ public class StockCalculatorActivity extends AppCompatActivity implements Stocks
                 }else{
                     ((TextView)dialog.findViewById(R.id.total_quantity)).setText(stockObject.getQuantity()+"");
                 }
-                /*if(stockObject.get() <= 0){
-                    dialog.findViewById(R.id.total_quantity_row).setVisibility(View.GONE);
-                }else{
-                    ((TextView)dialog.findViewById(R.id.total_quantity)).setText(stockObject.getQuantity()+"");
-                }*/
+                ((TextView)dialog.findViewById(R.id.transaction_amount)).setText(stockObject.getTurnOver()+"");
+                ((TextView)dialog.findViewById(R.id.taxes_amount)).setText(MainPrefs.getFormattedNumber(stockObject.getTotalCharges()));
+                TextView profitLossLabel = ((TextView)dialog.findViewById(R.id.total_amount_label));
+                double profitLossVal = 0;
+                if(stockObject.getBuyPrice()>0 && stockObject.getSellPrice()>0){
+                    profitLossLabel.setText("Net Profit/Loss");
+                    profitLossVal = stockObject.getProfitOrLoss();
+                }else if(stockObject.getBuyPrice()>0){
+                    profitLossLabel.setText("Net Worth Bought");
+                    profitLossVal = (stockObject.getBuyPrice() * stockObject.getQuantity()) - stockObject.getTotalCharges();
+                }else if(stockObject.getSellPrice()>0){
+                    profitLossLabel.setText("Net Worth Sold");
+                    profitLossVal = (stockObject.getSellPrice() * stockObject.getQuantity()) - stockObject.getTotalCharges();
+                }
+                ((TextView)dialog.findViewById(R.id.total_amount)).setText(MainPrefs.getFormattedNumber(profitLossVal));
                 cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -105,14 +119,26 @@ public class StockCalculatorActivity extends AppCompatActivity implements Stocks
                 });
                 dialog.show();
             }
-        });
+        });*/
 
+    }
+
+    private void loadDefaultSettings(){
+        PreferenceManager.setDefaultValues(this, R.xml.delivery, true);
+        PreferenceManager.setDefaultValues(this, R.xml.intraday, true);
+        PreferenceManager.setDefaultValues(this, R.xml.futures, true);
+        PreferenceManager.setDefaultValues(this, R.xml.options, true);
+        PreferenceManager.setDefaultValues(this, R.xml.currency_preferences, true);
+        PreferenceManager.setDefaultValues(this, R.xml.commodities, true);
+        PreferenceManager.setDefaultValues(this, R.xml.exchange_preferences, true);
+        PreferenceManager.setDefaultValues(this, R.xml.bse_turnover_preferences, true);
+        PreferenceManager.setDefaultValues(this, R.xml.nse_turnover_preferences, true);
+        PreferenceManager.setDefaultValues(this, R.xml.stampduty_preferences, true);
     }
 
     @Override
     public StockObject shareData(StockObject stockObject) {
         this.stockObject = stockObject;
-
         return this.stockObject;
     }
 
@@ -121,6 +147,7 @@ public class StockCalculatorActivity extends AppCompatActivity implements Stocks
         getMenuInflater().inflate(R.menu.menu_stock_calculator, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -134,13 +161,12 @@ public class StockCalculatorActivity extends AppCompatActivity implements Stocks
                 break;
             case R.id.action_share:
                 Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-                sharingIntent.setType("text/html");
-                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml("<p>This is the text that will be shared.</p>"));
-                startActivity(Intent.createChooser(sharingIntent,"Share using"));
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "http://goo.gl/KTBufS");
+                startActivity(Intent.createChooser(sharingIntent, "Share using"));
                 break;
             case R.id.action_feedback:
                 String packageName = this.getPackageName();
-                packageName = "com.facebook.katana";
                 Uri uri = Uri.parse("market://details?id=" + packageName);
                 Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
                 /*To count with Play market backstack, After pressing back button, to taken back to our application, we need to add following flags to intent.*/
@@ -151,15 +177,15 @@ public class StockCalculatorActivity extends AppCompatActivity implements Stocks
                     startActivity(goToMarket);
                 } catch (ActivityNotFoundException e) {
                     startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("http://play.google.com/store/apps/details?id=" + packageName)));
+                            Uri.parse("http://goo.gl/KTBufS")));
                 }
                 break;
             case R.id.action_about:
                 startActivity(new Intent(this, AboutActivity.class));
                 break;
-            case R.id.action_transaction:
+            /*case R.id.action_transaction:
                 startActivity(new Intent(this, TransactionActivity.class));
-                break;
+                break;*/
             default:
                 Toast.makeText(this, item.getTitle()+"menu item is not present !", Toast.LENGTH_SHORT).show();
                 return true;
