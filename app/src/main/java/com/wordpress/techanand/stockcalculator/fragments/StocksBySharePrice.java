@@ -136,6 +136,7 @@ public class StocksBySharePrice extends Fragment {
                     infoTextView.setVisibility(View.GONE);
                     quantityTextView.setText(getResources().getString(R.string.app_stocksbyshareprice_quantity_label));
                 }
+                calculateAmount(false, true);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -150,14 +151,15 @@ public class StocksBySharePrice extends Fragment {
                 exchangeType = selectedExchange.getText().toString();
                 stockObjectData.setExchange(exchangeType);
                 calcPreferences();
+                calculateAmount(false, true);
             }
         });
 
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectCategory.setSelection(0);
-                selectExchange.check(R.id.nseExchange);
+                /*selectCategory.setSelection(0);
+                selectExchange.check(R.id.nseExchange);*/
                 buyInput.setText("");
                 sellInput.setText("");
                 quantityInput.setText("");
@@ -236,7 +238,7 @@ public class StocksBySharePrice extends Fragment {
             if(!message.equals("")){
                 clearData();
                 resultsTable.setVisibility(View.GONE);
-                new AlertDialog.Builder(getActivity())
+                /*new AlertDialog.Builder(getActivity())
                         .setTitle("Error")
                         .setMessage(message)
                         .setNeutralButton("OK", new DialogInterface.OnClickListener(){
@@ -244,7 +246,7 @@ public class StocksBySharePrice extends Fragment {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 return;
                             }
-                        }).show();
+                        }).show();*/
                 return;
             }
         }
