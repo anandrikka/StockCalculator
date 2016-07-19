@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wordpress.techanand.stockcalculator">
+    package="techanand.apps.stockcalculator">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".StockCalculatorActivity"
+            android:name="techanand.apps.stockcalculator.StockCalculatorActivity"
             android:label="@string/app_name"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/AppTheme.NoActionBar">
@@ -22,29 +22,29 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name="techanand.apps.stockcalculator.SettingsActivity"
             android:label="@string/app.settings_label"
-            android:parentActivityName=".StockCalculatorActivity"
+            android:parentActivityName="techanand.apps.stockcalculator.StockCalculatorActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.wordpress.techanand.stockcalculator.StockCalculatorActivity" />
+                android:value="techanand.apps.stockcalculator.StockCalculatorActivity" />
         </activity>
         <activity
-            android:name=".AboutActivity"
+            android:name="techanand.apps.stockcalculator.AboutActivity"
             android:label="@string/app.about_label"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".StockCalculatorActivity" />
+                android:value="techanand.apps.stockcalculator.StockCalculatorActivity" />
         </activity>
-        <activity android:name=".TransactionActivity"
+        <activity android:name="techanand.apps.stockcalculator.TransactionActivity"
             android:label="@string/app.transactions_label"
-            android:parentActivityName=".StockCalculatorActivity"
+            android:parentActivityName="techanand.apps.stockcalculator.StockCalculatorActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.wordpress.techanand.stockcalculator.StockCalculatorActivity" />
+                android:value="techanand.apps.stockcalculator.StockCalculatorActivity" />
         </activity>
     </application>
 

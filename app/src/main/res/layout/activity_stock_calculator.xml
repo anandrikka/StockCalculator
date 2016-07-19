@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.wordpress.techanand.stockcalculator.StockCalculatorActivity">
+    tools:context="techanand.apps.stockcalculator.StockCalculatorActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/stock_form"
-                    android:name="com.wordpress.techanand.stockcalculator.fragments.StocksBySharePrice"
+                    android:name="techanand.apps.stockcalculator.fragments.StocksBySharePrice"
                     tools:layout="@layout/stocks_by_share_price" />
 
             </LinearLayout>

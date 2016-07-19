@@ -147,18 +147,44 @@
             android:paddingRight="16dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp">
-
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="Total Turnover"/>
+                android:layout_weight="5"
+                android:text="Total Turnover"
+                android:textSize="16dp"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="123"
-                android:id="@+id/totalTurnOver"/>
+                android:id="@+id/totalTurnOver"
+                android:textSize="16dp"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="Brokerage"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="123"
+                android:id="@+id/brokerage"
+                android:textSize="16dp"
+                android:textColor="@android:color/black"/>
 
         </LinearLayout>
 
@@ -170,19 +196,20 @@
             android:paddingRight="16dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp">
-
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="Brokerage"/>
+                android:layout_weight="5"
+                android:text="STT Charges"
+                android:textSize="16dp"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="123"
-                android:id="@+id/brokerage"/>
-
+                android:id="@+id/sttCharges"
+                android:textSize="16dp"
+                android:textColor="@android:color/black"/>
         </LinearLayout>
 
         <LinearLayout
@@ -193,24 +220,73 @@
             android:paddingRight="16dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp">
-
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="Exchange charges &amp; Taxes"/>
+                android:layout_weight="5"
+                android:text="Stampduty Charges"
+                android:textSize="16dp"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="123"
-                android:id="@+id/otherCharges"/>
+                android:id="@+id/stampdutyCharges"
+                android:textSize="16dp"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="Exchange &amp; SEBI Charges"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="123"
+                android:id="@+id/exchangeCharges"
+                android:textSize="16dp"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="Service Tax"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="123"
+                android:id="@+id/serviceTax"
+                android:textSize="16dp"
+                android:textColor="@android:color/black"/>
         </LinearLayout>
 
         <View
             android:layout_width="fill_parent"
-            android:layout_height="2dp"
+            android:layout_height="3dp"
             android:background="#c0c0c0"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"/>
@@ -227,15 +303,18 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="5"
                 android:text="Break Even Points"
-                android:id="@+id/break_even_label"/>
+                android:id="@+id/break_even_label"
+                android:textSize="16dp"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="123"
-                android:id="@+id/breakEvenPrice"/>
+                android:id="@+id/breakEvenPrice"
+                android:textSize="16dp"
+                android:textColor="@android:color/black"/>
 
         </LinearLayout>
 
@@ -252,15 +331,18 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="5"
                 android:text="Taxes + Brokerage"
-                android:id="@+id/prfit_loss_label"/>
+                android:id="@+id/prfit_loss_label"
+                android:textSize="16dp"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="123"
-                android:id="@+id/profitOrLoss"/>
+                android:id="@+id/profitOrLoss"
+                android:textSize="16dp"
+                android:textColor="@android:color/black"/>
 
         </LinearLayout>
 

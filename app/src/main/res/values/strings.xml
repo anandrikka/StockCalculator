@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Stock Calculator</string>
     <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -185,13 +184,8 @@
     <!-- ...................... Brokerage Preferences : Start .................................-->
     <string name="prefs.brokerage_use_flat_charges_title">Use Flat Charges</string>
     <string name="prefs.brokerage.flat_charges_title">Flat Charges</string>
-    <string name="prefs.brokerage_minimum_title">Minimum</string>
     <string name="prefs.brokerage_maximum_title">Maximum</string>
     <string name="prefs.brokerage_percent_title">Percentage (%)</string>
-    <string name="prefs.brokerage.delivery_title">Delivery</string>
-    <string name="prefs.brokerage.intraday_title">Intraday</string>
-    <string name="prefs.brokerage.futures_title">Futures</string>
-    <string name="prefs.brokerage.options_title">Options</string>
     <string name="prefs.brokerage.currency_title">Currency</string>
     <string name="prefs.brokerage.commodities_title">Commodities</string>
     <string name="prefs.brokerage.currency.futures_title">FUTURES</string>
@@ -212,7 +206,6 @@
 
     <!-- ...................... Exchange Turnover Preferences : Start .................................-->
     <string name="prefs.exchange.turnover_charges_title">Turnover Charges % (On Turnover)</string>
-    <string name="prefs.exchange.nsecharges_title">NSE Turnover Charges % (On Turnover)</string>
     <string name="prefs.exchange.nsecharges.delivery_title">Delivery</string>
     <string name="prefs.exchange.nsecharges.intraday_title">Intraday</string>
     <string name="prefs.exchange.nsecharges.futures_title">Futures</string>
@@ -221,7 +214,6 @@
     <string name="prefs.exchange.nsecharges.currency_futures_title">Futures</string>
     <string name="prefs.exchange.nsecharges.currency_options_title">Options</string>
     <string name="prefs.exchange.nsecharges.commodities_title">Commodities</string>
-    <string name="prefs.exchange.bsecharges_title">BSE Turnover Charges %(On Turnover)</string>
     <string name="prefs.exchange.bsecharges.delivery_title">Delivery</string>
     <string name="prefs.exchange.bsecharges.intraday_title">Intraday</string>
     <string name="prefs.exchange.bsecharges.futures_title">Futures</string>
@@ -258,7 +250,6 @@
     <string name="app.stocks.quantity_label">Quantity</string>
     <string name="app.stocks_reset_label">Reset</string>
     <string name="app.stocks.calculate">Calculate</string>
-    <string name="app.stocks.amount_invested">Amount Invested</string>
     <string name="app.stocks.no_brokerage_charges">Zero brokerage charges</string>
     <string name="app.stocks.using_flat_brokerage">Using Flat brokerage of Rs.%1$d per trade</string>
     <string name="app.stocks.delivery_using_percent_brokerage">%1$s percent of brokerage on Total turnover</string>
@@ -285,6 +276,9 @@
     <string name="app.stampdutycharges.title">Stampduty charges</string>
     <string name="app.stocksbyprice.lots_label">Lots</string>
     <string name="app.stocksbyshareprice.quantity_label">Quantity</string>
+    <string name="app.stocksbyshareprice.net_profit_loss">Net Profit/Loss</string>
+    <string name="app.stocksbyshareprice.net_worth_bought">Net Worth Bought</string>
+    <string name="app.stocksbyshareprice.net_worth_sold">Net Worth Sold</string>
 
 
 </resources>
