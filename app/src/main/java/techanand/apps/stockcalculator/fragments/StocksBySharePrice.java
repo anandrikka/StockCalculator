@@ -276,6 +276,7 @@ public class StocksBySharePrice extends Fragment {
             double tBuyBrokerage, tSellBrokerage, maxBrokerage;
             tBuyBrokerage = stockPreferencesObject.getBrokeragePercent() * 0.01 * stockObjectData.getTotalBuyValue();
             tSellBrokerage = stockPreferencesObject.getBrokeragePercent() * 0.01 * stockObjectData.getTotalSellValue();
+            tBrokerage = tBuyBrokerage + tSellBrokerage;
             maxBrokerage = stockPreferencesObject.getMaxBrokerage();
             if(maxBrokerage > 0){
                 tBuyBrokerage = (tBuyBrokerage > maxBrokerage) ? maxBrokerage : tBuyBrokerage;
