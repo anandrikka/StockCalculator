@@ -276,7 +276,8 @@
     <string name="app.stampdutycharges.title">Stampduty charges</string>
     <string name="app.stocksbyprice.lots_label">Lots</string>
     <string name="app.stocksbyshareprice.quantity_label">Quantity</string>
-    <string name="app.stocksbyshareprice.net_profit_loss">Net Profit/Loss</string>
+    <string name="app.stocksbyshareprice.net_profit">Net Profit</string>
+    <string name="app.stocksbyshareprice.net_loss">Net Loss</string>
     <string name="app.stocksbyshareprice.net_worth_bought">Net Worth Bought</string>
     <string name="app.stocksbyshareprice.net_worth_sold">Net Worth Sold</string>
 

@@ -4,4 +4,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="profit">#A5D6A7</color>
+    <color name="loss">#EF5350</color>
+    <color name="no_profit_loss">#90A4AE</color>
 </resources>

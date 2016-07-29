@@ -86,7 +86,7 @@
                 android:layout_height="40dp"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:inputType="numberDecimal"/>
+                android:inputType="number"/>
         </TableRow>
         <TextView
             android:layout_width="match_parent"
@@ -132,330 +132,297 @@
             android:id="@+id/txt_dia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:text="Transaction Details"
             android:textColor="@android:color/black"
             android:textSize="16dp"
             android:gravity="center"/>
 
-
-        <LinearLayout
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:text="Total Turnover"
-                android:textSize="16dp"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="123"
-                android:id="@+id/totalTurnOver"
-                android:textSize="16dp"
-                android:textColor="@android:color/black"/>
-        </LinearLayout>
+            android:layout_marginBottom="8dp">
 
-        <LinearLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Total Amount Traded"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="123"
+                    android:id="@+id/totalTurnOver"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:text="Brokerage"
-                android:textSize="16dp"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="123"
-                android:id="@+id/brokerage"
-                android:textSize="16dp"
-                android:textColor="@android:color/black"/>
+            android:id="@+id/profitOrLossCard"
+            android:layout_marginBottom="8dp">
 
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:id="@+id/net_profit_loss">
 
-        <LinearLayout
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Profit or Loss"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/profit_loss_label"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="123"
+                    android:id="@+id/profitOrLoss"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:text="STT Charges"
-                android:textSize="16dp"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="123"
-                android:id="@+id/sttCharges"
-                android:textSize="16dp"
-                android:textColor="@android:color/black"/>
-        </LinearLayout>
+            android:layout_marginBottom="8dp">
 
-        <LinearLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Break Even Points"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/break_even_label"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="123"
+                    android:id="@+id/breakEvenPrice"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/charge_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:text="Stampduty Charges"
-                android:textSize="16dp"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="123"
-                android:id="@+id/stampdutyCharges"
-                android:textSize="16dp"
-                android:textColor="@android:color/black"/>
-        </LinearLayout>
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Charges"
+            android:textColor="@android:color/black"
+            android:textSize="16dp"
+            android:gravity="center"/>
 
-        <LinearLayout
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
-            <TextView
-                android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:text="Exchange &amp; SEBI Charges"
-                android:textSize="16dp"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="123"
-                android:id="@+id/exchangeCharges"
-                android:textSize="16dp"
-                android:textColor="@android:color/black"/>
-        </LinearLayout>
+                android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:text="Service Tax"
-                android:textSize="16dp"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="123"
-                android:id="@+id/serviceTax"
-                android:textSize="16dp"
-                android:textColor="@android:color/black"/>
-        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:text="Total Charges"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="123"
+                        android:id="@+id/total_charges"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"/>
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="3dp"
-            android:background="#c0c0c0"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"/>
+                </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#c0c0c0"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"/>
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:text="Break Even Points"
-                android:id="@+id/break_even_label"
-                android:textSize="16dp"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="123"
-                android:id="@+id/breakEvenPrice"
-                android:textSize="16dp"
-                android:textColor="@android:color/black"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="4"
+                        android:text="Brokerage"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="123"
+                        android:id="@+id/brokerage"
+                        android:textSize="16dp"
+                        android:textColor="@android:color/black"/>
 
-        </LinearLayout>
+                </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:id="@+id/net_profit_loss">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:text="STT Charges"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="123"
+                        android:id="@+id/sttCharges"
+                        android:textSize="16dp"
+                        android:textColor="@android:color/black"/>
+                </LinearLayout>
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:text="Taxes + Brokerage"
-                android:id="@+id/prfit_loss_label"
-                android:textSize="16dp"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="123"
-                android:id="@+id/profitOrLoss"
-                android:textSize="16dp"
-                android:textColor="@android:color/black"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:text="Stampduty Charges"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="123"
+                        android:id="@+id/stampdutyCharges"
+                        android:textSize="16dp"
+                        android:textColor="@android:color/black"/>
+                </LinearLayout>
 
-        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:text="Exchange &amp; SEBI Charges"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="123"
+                        android:id="@+id/exchangeCharges"
+                        android:textSize="16dp"
+                        android:textColor="@android:color/black"/>
+                </LinearLayout>
 
-        <!--<LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:id="@+id/total_amount_row">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:text="Service Tax"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="123"
+                        android:id="@+id/serviceTax"
+                        android:textSize="16dp"
+                        android:textColor="@android:color/black"/>
+                </LinearLayout>
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="Total Amount"
-                android:id="@+id/total_amount_label"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="123"
-                android:id="@+id/total_amount"/>
+            </LinearLayout>
 
-        </LinearLayout>-->
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
-
-    <!--<TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="10dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="16dp"
-        android:layout_below="@+id/resultsTables"
-        android:id="@+id/resultsTable1">
-        <TableRow android:paddingBottom="16dp">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:text="Results"
-                android:gravity="center"
-                android:textSize="16sp"
-                android:textAllCaps="true"
-                android:textStyle="bold"/>
-        </TableRow>
-        <TableRow android:paddingBottom="8dp">
-            <TextView android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:text="Total Turnover"
-                android:gravity="right"
-                android:paddingRight="36dp"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/totalTurnOver"/>
-        </TableRow>
-        <TableRow android:paddingBottom="8dp">
-            <TextView android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:text="Brokerage"
-                android:gravity="right"
-                android:paddingRight="36dp"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/brokerage"/>
-        </TableRow>
-        <TableRow android:paddingBottom="8dp">
-            <TextView android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:text="Exchange charges &amp; Taxes"
-                android:gravity="right"
-                android:paddingRight="36dp"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:id="@+id/otherCharges"/>
-        </TableRow>
-        <TableRow android:paddingBottom="8dp" android:id="@+id/break_even_row">
-            <TextView android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:text="Break Even Points"
-                android:gravity="right"
-                android:paddingRight="36dp"
-                android:id="@+id/break_even_label"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/breakEvenPrice"/>
-        </TableRow>
-        <TableRow android:id="@+id/net_profit_loss">
-            <TextView android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:text="Net Profit/Loss"
-                android:gravity="right"
-                android:id="@+id/prfit_loss_label"
-                android:paddingRight="36dp"/>
-            <TextView android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/profitOrLoss"/>
-        </TableRow>
-    </TableLayout>-->
 
 </RelativeLayout>
