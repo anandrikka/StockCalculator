@@ -66,8 +66,8 @@
     <!--Exchange and Sebi Keys and Defaults-->
     <string name="prefs.exchange_service_tax_key" translatable="false">exchange_service_tax</string>
     <string name="prefs.sebi_charges_key" translatable="false">exchange_sebi_charges</string>
-    <string name="prefs.exchange_service_tax_default">15</string>
-    <string name="prefs.sebi_charges_default">20</string>
+    <string name="prefs.exchange_service_tax_default">18</string>
+    <string name="prefs.sebi_charges_default">15</string>
 
     <!--Security Transaction Tax Keys and Defaults-->
     <string name="prefs.exchange.stt.delivery_key" translatable="false">exchange_stt_delivery</string>
@@ -77,7 +77,7 @@
     <string name="prefs.exchange.stt.commodities_key">exchange_stt_commodities</string>
     <string name="prefs.exchange.stt.delivery_default">0.1</string>
     <string name="prefs.exchange.stt.intraday_default">0.025</string>
-    <string name="prefs.exchange.stt.futures_default">0.01</string>
+    <string name="prefs.exchange.stt.futures_default">0.05</string>
     <string name="prefs.exchange.stt.options_default">0.017</string>
     <string name="prefs.exchange.stt.commodities_default">0.01</string>
 
@@ -93,9 +93,9 @@
     <string name="prefs.exchange.nsecharges.intraday_default">0.00325</string>
     <string name="prefs.exchange.nsecharges.futures_default">0.0021</string>
     <string name="prefs.exchange.nsecharges.options_default">0.053</string>
-    <string name="prefs.exchange.nsecharges.currency_futures_default">0.00135</string>
+    <string name="prefs.exchange.nsecharges.currency_futures_default">0.0011</string>
     <string name="prefs.exchange.nsecharges.currency_options_default">0.044</string>
-    <string name="prefs.exchange.nsecharges.commodities_default">0.0031</string>
+    <string name="prefs.exchange.nsecharges.commodities_default">0.0036</string>
 
     <!--BSE Keys and Defaults-->
     <string name="prefs.exchange.bsecharges.delivery_key" translatable="false">bse_charges_delivery</string>
@@ -194,7 +194,7 @@
     <!-- ...................... Brokerage Preferences : End .................................-->
 
     <!-- ...................... Exchange Preferences : Start .................................-->
-    <string name="prefs.exchange_service_tax_title">Service Tax % (On Brokerage+Tx Charges)</string>
+    <string name="prefs.exchange_service_tax_title">GST % (Brokerage + Tx)</string>
     <string name="prefs.sebi_charges_title">SEBI charges per Crore</string>
     <string name="prefs.exchange_sst_title">Security Transaction Tax % (On Turnover)</string>
     <string name="prefs.exchange.stt.delivery_title">Delivery</string>
